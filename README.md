@@ -1,6 +1,12 @@
+## Parei na aula: Controller de perfil
+
 ## APP
 
+A aplicaçãoe stá sendo feita seguindo os conceitos de SOLID
+
 GymPass style app
+
+Nossa aplicação é para os clientes de uma rede de academias
 
 ## RFf (Requisitos Funcionais)
 
@@ -30,5 +36,3 @@ GymPass style app
 - [x] Os dados da aplicação precisam ser persistidos em um banco PostgreSQL;
 - [x] Todas as listas de dados precisam estar paginadas com 20 items por página;
 - [] O usuário deve ser identificado por um JWT (JSON Web Token);
-
-## Parei na aula: Factories dos casos de uso

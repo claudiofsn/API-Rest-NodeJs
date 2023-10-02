@@ -17,10 +17,21 @@ export async function authenticate(
     try {
         const authenticateUseCase = makeAuthenticateUseCase();
 
-        await authenticateUseCase.execute({
+        const { user } = await authenticateUseCase.execute({
             email,
             password,
         });
+
+        const token = await response.jwtSign({}, {
+            sign: {
+                sub: user.id
+            }
+        })
+
+        return response.status(200).send({
+            token
+        })
+
     } catch (error) {
         if (error instanceof InvalidCredentialsError) {
             return response.status(400).send({ message: error.message });
@@ -28,6 +39,4 @@ export async function authenticate(
 
         throw error;
     }
-
-    return response.status(200).send();
 }
