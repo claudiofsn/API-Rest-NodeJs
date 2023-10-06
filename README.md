@@ -36,3 +36,7 @@ Nossa aplicação é para os clientes de uma rede de academias
 - [x] Os dados da aplicação precisam ser persistidos em um banco PostgreSQL;
 - [x] Todas as listas de dados precisam estar paginadas com 20 items por página;
 - [] O usuário deve ser identificado por um JWT (JSON Web Token);
+
+# Anotação
+
+A aula Criando test environment do Projeto 03 de NodeJs explica como criar um ambiente de teste End To End (E2E) utilizando vitest e prisma
