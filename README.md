@@ -1,4 +1,4 @@
-## Parei na aula: Controller de perfil
+## Parei na aula: Controller de criação de academia
 
 ## APP
 
