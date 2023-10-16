@@ -19,7 +19,7 @@ export async function history(
         userId: request.user.sub
     });
 
-    return response.status(201).send({
+    return response.status(200).send({
         checkIns
     });
 }
