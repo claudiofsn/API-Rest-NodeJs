@@ -1,4 +1,4 @@
-## Parei na aula: Controller de criação de academia
+## Parei na aula: Implementação do refresh token
 
 ## APP
 
