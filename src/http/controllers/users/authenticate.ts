@@ -22,14 +22,19 @@ export async function authenticate(
             password,
         });
 
-        const token = await response.jwtSign({}, {
+        const token = await response.jwtSign(
+            {
+                role: user.role
+            }, {
             sign: {
                 sub: user.id
             }
         })
 
         const refreshToken = await response.jwtSign(
-            {}, {
+            {
+                role: user.role
+            }, {
             sign: {
                 sub: user.id,
                 expiresIn: '7d'
