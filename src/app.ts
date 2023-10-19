@@ -1,10 +1,28 @@
 import fastify from 'fastify';
-import { appRoutes } from './http/routes';
+import fastifyCookie from '@fastify/cookie'
+import { usersRoutes } from './http/controllers/users/routes';
 import { ZodError } from 'zod';
 import { env } from './env';
+import fastifyJwt from '@fastify/jwt';
+import { gymsRoutes } from './http/controllers/gyms/routes';
+import { checkInsRoutes } from './http/controllers/check-ins/routes';
 export const app = fastify();
 
-app.register(appRoutes);
+app.register(fastifyJwt, {
+    secret: env.JWT_SECRET,
+    cookie: {
+        cookieName: 'refreshToken',
+        signed: false
+    },
+    sign: {
+        expiresIn: '10m'
+    }
+})
+
+app.register(fastifyCookie)
+app.register(usersRoutes);
+app.register(gymsRoutes);
+app.register(checkInsRoutes);
 
 app.setErrorHandler((error, _, response) => {
     if (error instanceof ZodError) {
@@ -16,7 +34,7 @@ app.setErrorHandler((error, _, response) => {
     if (env.NODE_ENV !== 'production') {
         console.error(error);
     } else {
-        // Log to and external tool like DataDog/NewRelic/Sentry
+        // Log to an external tool like DataDog/NewRelic/Sentry
     }
 
     return response.status(500).send({ message: 'Internal server error.' });

@@ -1,6 +1,12 @@
+## Parei na aula: Implementação do refresh token
+
 ## APP
 
+A aplicaçãoe stá sendo feita seguindo os conceitos de SOLID
+
 GymPass style app
+
+Nossa aplicação é para os clientes de uma rede de academias
 
 ## RFf (Requisitos Funcionais)
 
@@ -31,4 +37,6 @@ GymPass style app
 - [x] Todas as listas de dados precisam estar paginadas com 20 items por página;
 - [] O usuário deve ser identificado por um JWT (JSON Web Token);
 
-## Parei na aula: Factories dos casos de uso
+# Anotação
+
+A aula Criando test environment do Projeto 03 de NodeJs explica como criar um ambiente de teste End To End (E2E) utilizando vitest e prisma
